@@ -28,7 +28,7 @@ st.set_page_config(
 # Load Dataset and Model
 # ----------------------------
 
-movies = pd.read_csv("clean_movies.csv")
+movies = pd.read_csv("clean_movies.xls")
 
 model = joblib.load("models/rf_model.pkl")
 
