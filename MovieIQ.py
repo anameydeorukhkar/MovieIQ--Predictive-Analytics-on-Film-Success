@@ -357,46 +357,53 @@ elif page == "Movie Success Prediction":
 
     st.markdown("---")
 
-    if st.button("Predict Movie Success"):
+if st.button("Predict Movie Success"):
 
-        prediction = model.predict([[budget, popularity, runtime, vote_average]])
+    prediction = model.predict([[
+        budget,
+        popularity,
+        runtime,
+        vote_average
+    ]])
 
-        probabilities = model.predict_proba([[budget, popularity, runtime, vote_average]])
+    probabilities = model.predict_proba([[
+        budget,
+        popularity,
+        runtime,
+        vote_average
+    ]])
 
-        failure_prob = probabilities[0][0] * 100
-        success_prob = probabilities[0][1] * 100
+    failure_prob = probabilities[0][0] * 100
+    success_prob = probabilities[0][1] * 100
 
-        st.write(f"Probability of Failure: {failure_prob:.2f}%")
-        st.write(f"Probability of Success: {success_prob:.2f}%")
+    if prediction[0] == 1:
+        st.success("🎉 Prediction: This movie is likely to be SUCCESSFUL!")
+    else:
+        st.error("❌ Prediction: This movie is likely to be UNSUCCESSFUL.")
 
-        if prediction[0] == 1:
-            st.success("Movie is likely to be Successful")
-    
-        else:
-            st.error("Movie is likely to be Unsuccessful")
+    st.write(f"**Probability of Success:** {success_prob:.2f}%")
+    st.write(f"**Probability of Failure:** {failure_prob:.2f}%")
 
-        st.info(f"Model Confidence: {confidence:.2f}%")
+    st.markdown("---")
 
-        st.markdown("---")
+    st.subheader("Input Summary")
 
-        st.subheader("Input Summary")
+    summary = pd.DataFrame({
+        "Feature": [
+            "Budget",
+            "Popularity",
+            "Runtime",
+            "Vote Average"
+        ],
+        "Value": [
+            budget,
+            popularity,
+            runtime,
+            vote_average
+        ]
+    })
 
-        summary = pd.DataFrame({
-            "Feature": [
-                "Budget",
-                "Popularity",
-                "Runtime",
-                "Vote Average"
-            ],
-            "Value": [
-                budget,
-                popularity,
-                runtime,
-                vote_average
-            ]
-        })
-
-        st.table(summary)
+    st.table(summary)
 
 # ==========================================================
 # FOOTER
