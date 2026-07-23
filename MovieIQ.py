@@ -359,31 +359,21 @@ elif page == "Movie Success Prediction":
 
     if st.button("Predict Movie Success"):
 
-        prediction = model.predict([[
-            budget,
-            popularity,
-            runtime,
-            vote_average
-        ]])
+        prediction = model.predict([[budget, popularity, runtime, vote_average]])
 
-        prediction_probability = model.predict_proba([[
-            budget,
-            popularity,
-            runtime,
-            vote_average
-        ]])
+        probabilities = model.predict_proba([[budget, popularity, runtime, vote_average]])
 
-        confidence = prediction_probability.max() * 100
+        failure_prob = probabilities[0][0] * 100
+        success_prob = probabilities[0][1] * 100
 
-        st.markdown("---")
+        st.write(f"Probability of Failure: {failure_prob:.2f}%")
+        st.write(f"Probability of Success: {success_prob:.2f}%")
 
         if prediction[0] == 1:
-
-            st.success("🎉 Prediction: This movie is likely to be SUCCESSFUL!")
-
+            st.success("Movie is likely to be Successful")
+    
         else:
-
-            st.error("❌ Prediction: This movie is likely to be UNSUCCESSFUL.")
+            st.error("Movie is likely to be Unsuccessful")
 
         st.info(f"Model Confidence: {confidence:.2f}%")
 
