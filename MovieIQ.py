@@ -30,7 +30,7 @@ st.set_page_config(
 
 movies = pd.read_csv("clean_movies.xls")
 
-model = joblib.load("models/rf_model.pkl")
+model = joblib.load("rf_model.pkl")
 
 # ----------------------------
 # Title
