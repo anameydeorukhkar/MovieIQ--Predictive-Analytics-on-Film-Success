@@ -146,7 +146,7 @@ elif page == "Exploratory Data Analysis":
     st.subheader("1. Budget vs Revenue")
 
     st.image(
-        "assets/budget_vs_revenue.png",
+        "budget_vs_revenue.png",
         use_container_width=True
     )
 
@@ -163,7 +163,7 @@ elif page == "Exploratory Data Analysis":
     st.subheader("2. Most Common Movie Genres")
 
     st.image(
-        "assets/genre_frequency.png",
+        "genre_frequency.png",
         use_container_width=True
     )
 
@@ -180,7 +180,7 @@ elif page == "Exploratory Data Analysis":
     st.subheader("3. Success Rate by Genre")
 
     st.image(
-        "assets/genre_success_rate.png",
+        "genre_success_rate.png",
         use_container_width=True
     )
 
@@ -197,7 +197,7 @@ elif page == "Exploratory Data Analysis":
     st.subheader("4. Popularity vs Movie Success")
 
     st.image(
-        "assets/popularity_vs_success.png",
+        "popularity_vs_success.png",
         use_container_width=True
     )
 
@@ -214,7 +214,7 @@ elif page == "Exploratory Data Analysis":
     st.subheader("5. Runtime vs Movie Success")
 
     st.image(
-        "assets/runtime_vs_success.png",
+        "runtime_vs_success.png",
         use_container_width=True
     )
 
@@ -231,7 +231,7 @@ elif page == "Exploratory Data Analysis":
     st.subheader("6. Vote Average vs Movie Success")
 
     st.image(
-        "assets/vote_average_vs_success.png",
+        "vote_average_vs_success.png",
         use_container_width=True
     )
 
@@ -248,7 +248,7 @@ elif page == "Exploratory Data Analysis":
     st.subheader("7. Correlation Heatmap")
 
     st.image(
-        "assets/correlation_heatmap.png",
+        "correlation_heatmap.png",
         use_container_width=True
     )
 
@@ -265,7 +265,7 @@ elif page == "Exploratory Data Analysis":
     st.subheader("8. Distribution of Successful Movies")
 
     st.image(
-        "assets/success_distribution.png",
+        "success_distribution.png",
         use_container_width=True
     )
 
@@ -282,7 +282,7 @@ elif page == "Exploratory Data Analysis":
     st.subheader("9. Confusion Matrix")
 
     st.image(
-        "assets/confusion_matrix.png",
+        "confusion_matrix.png",
         use_container_width=True
     )
 
@@ -299,7 +299,7 @@ elif page == "Exploratory Data Analysis":
     st.subheader("10. Feature Importance")
 
     st.image(
-        "assets/feature_importance.png",
+        "feature_importance.png",
         use_container_width=True
     )
 
